@@ -19,8 +19,13 @@ run: build
 		-p 9113:8080 \
 		--rm \
 		quay.io/opsee/$(PROJECT):$(GITCOMMIT)
-
 push:
 	docker push quay.io/opsee/$(PROJECT):$(GITCOMMIT)
+
+deploy-plan: terraform
+	TF_VAR_image_version=$(IMAGE_VERSION) $(MAKE) -C terraform $(ENVIRONMENT)-plan
+
+deploy: deploy-plan
+	$(MAKE) -C terraform $(ENVIRONMENT)-apply
 
 .PHONY: build run all push
