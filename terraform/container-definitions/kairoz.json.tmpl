@@ -4,13 +4,13 @@
         "Image": "quay.io/opsee/cats:${version}",
         "Memory": 256,
         "Essential": true,
-        "Command": ["/run.sh"],
+        "Command": ["/opt/kairosdb/bin/kairosdb.sh", "run"],
         "Environment": [
             { "Name": "APPENV", "Value": "${appenv}" }
         ],
         "PortMappings": [{
             "hostPort": 9113,
-            "containerPort": 9114,
+            "containerPort": 8080,
             "protocol": "tcp"
         }],
         "LogConfiguration": {
