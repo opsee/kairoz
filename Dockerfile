@@ -3,7 +3,7 @@ MAINTAINER Opsee dan@opsee.com
 
 RUN apk --update add openjdk7-jre bash ca-certificates
 
-EXPOSE 8080
+EXPOSE 9113
 EXPOSE 4242
 
 # kairosdb 1.1.1

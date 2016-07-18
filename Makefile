@@ -19,7 +19,7 @@ build:
 
 run: build
 	docker run \
-		-p 9113:8080 \
+		-p 9113:9113 \
 		--rm \
 		quay.io/opsee/$(PROJECT):$(GITCOMMIT)
 push:
