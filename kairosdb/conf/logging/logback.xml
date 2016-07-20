@@ -13,7 +13,7 @@
 			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level [%file:%line] - %msg%n</pattern>
 		</encoder>
 	</appender>
-	<logger name="com.mchange.v2.c3p0" level="WARN"/>
+	<logger name="com.mchange.v2.c3p0" level="ERROR"/>
 
 	<!--<logger name="org.hbase.async.RegionClient" level="DEBUG"/>-->
 
@@ -22,7 +22,7 @@
 
 	<!--<logger name="org.kairosdb.core.http.rest.MetricsResource" level="DEBUG"/>-->
 
-	<root level="DEBUG">
+	<root level="ERROR">
 		<appender-ref ref="stdout"/>
 	</root>
 </configuration>
